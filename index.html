@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17132a">
+  <meta name="description" content="Pixel Pet, Opus 5.5 edition: hatch a one-of-a-kind pixel creature, raise it in a room that follows your real clock and weather, and watch it grow into a form shaped by how you care for it.">
+  <title>Pixel Pet, Opus 5.5 edition</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&family=Nunito:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="src/main.js"></script>
+</head>
+<body>
+  <header class="top">
+    <h1>Pixel Pet <span>Opus 5.5 edition</span></h1>
+    <nav aria-label="Elsewhere">
+      <a href="https://ncypher.github.io/tomfoolery/pixel-pet.html">The original Pixel Pet</a>
+      <a href="https://ncypher.github.io/tomfoolery/#collection">Collection</a>
+      <button id="soundBtn" class="chip" type="button" aria-pressed="false">Sound off</button>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section class="play" aria-label="Your pet's room">
+      <div class="frame">
+        <canvas id="room" width="120" height="75" role="img" aria-label="Your pet's room. Tap the pet to pat it, tap a mess to scoop it, tap the floor to call it over."></canvas>
+        <span class="world" id="worldLabel"></span>
+      </div>
+      <p class="message" id="message" role="status" aria-live="polite"></p>
+
+      <div class="actions" aria-label="Care">
+        <button id="feedBtn" type="button" aria-expanded="false" aria-controls="shelf"><b>F</b>eed</button>
+        <button id="ballBtn" type="button">Throw <b>b</b>all</button>
+        <button id="petBtn" type="button"><b>P</b>at</button>
+        <button id="bathBtn" type="button">Bath (<b>w</b>ash)</button>
+        <button id="lightBtn" type="button" aria-pressed="false">Lights off</button>
+        <button id="photoBtn" type="button" class="photo">Take a photo</button>
+      </div>
+      <div class="shelf" id="shelf" hidden aria-label="Food shelf"></div>
+    </section>
+
+    <aside class="panel">
+      <div class="who">
+        <h2 id="petName">…</h2>
+        <span class="badge" id="stageBadge">Egg</span>
+      </div>
+      <p class="age" id="age"></p>
+      <p class="wish" id="wish"></p>
+
+      <div class="meters" id="meters"></div>
+
+      <div class="grow">
+        <div class="grow-bar"><span id="growFill"></span></div>
+        <p id="growLabel"></p>
+      </div>
+
+      <dl class="likes">
+        <div><dt>Favorite food</dt><dd id="favorite">?</dd></div>
+        <div><dt>Won’t touch</dt><dd id="disliked">?</dd></div>
+      </dl>
+
+      <section class="journal-wrap" aria-labelledby="journalTitle">
+        <h3 id="journalTitle">Journal</h3>
+        <ol class="journal" id="journal"></ol>
+      </section>
+
+      <details class="settings">
+        <summary>Name and settings</summary>
+        <form id="renameForm" class="rename">
+          <label for="nameInput">Name</label>
+          <div><input id="nameInput" maxlength="16" autocomplete="off"><button type="submit">Save</button></div>
+        </form>
+        <button id="restartBtn" class="restart" type="button" data-armed="false">Start over with a new egg</button>
+        <p class="save-note" id="saveNote"></p>
+      </details>
+    </aside>
+  </main>
+
+  <section class="about">
+    <div>
+      <h2>Every pet is one of a kind.</h2>
+      <p>Each egg carries its own genes: body shape, colors, ears, pattern, eyes, a personality, and a favorite food you have to discover. It grows from baby to kid to grown-up, and its grown-up form depends on how you raised it: mostly play makes a Bouncer, mostly snacks a Puffball, mostly affection a Glimmer, and a bit of everything a Sage.</p>
+    </div>
+    <div>
+      <h2>A room on your clock.</h2>
+      <p>The window shows your real time of day and season: sunrise, stars, snow in winter, leaves in autumn, fireflies on summer nights. Your pet gets sleepy at night. Nothing here dies. While you are away it just misses you a little, and the journal keeps track of what happened.</p>
+    </div>
+    <p class="credit">Built by Claude Opus 5.5 for Tom Harwood’s <a href="https://ncypher.github.io/tomfoolery/">Conversational Artifacts</a>, as a new take on <a href="https://ncypher.github.io/tomfoolery/pixel-pet.html">the original Pixel Pet</a>. <a href="https://github.com/ncypher/Opus.5.5_pixel.pet">Source</a>.</p>
+  </section>
+</body>
+</html>

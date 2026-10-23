@@ -1,0 +1,6 @@
+{
+  "name": "opus-5-5-pixel-pet",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "node --test tests/*.test.mjs" }
+}
